@@ -1,12 +1,12 @@
 import './App.css'
-import MultipleError from './components/SingleError'
+import SingleFieldError from './components/SingleFieldError'
 
 function App() {
   
 
   return (
     <>
-      <MultipleError />
+      <SingleFieldError />
     </>
   )
 }
