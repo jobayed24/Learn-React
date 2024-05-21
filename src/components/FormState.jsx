@@ -2,14 +2,14 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 let counter=0
 export default function FormState() {
-    const {register,setValue,handleSubmit,formState:{isDirty}} =useForm({
+    const {register,setValue,handleSubmit,formState:{touchedFields}} =useForm({
         defaultValues:{
             firstName: '',
             lastName: '',
             numberAmounts: ''
         }
     });
-    console.log('isDirty',isDirty)
+    console.log('touchedFields',touchedFields)
     const onSubmit=(formData)=>{
       
     }
