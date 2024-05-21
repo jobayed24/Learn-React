@@ -1,12 +1,12 @@
 import './App.css'
-import SingleFieldError from './components/SingleFieldError'
+import FormState from './components/FormState'
 
 function App() {
   
 
   return (
     <>
-      <SingleFieldError />
+      <FormState />
     </>
   )
 }
