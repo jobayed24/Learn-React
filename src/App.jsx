@@ -1,11 +1,11 @@
 import './App.css'
-import Register from './components/ReactHookForm/Register'
+import Unregister from './components/ReactHookForm/Unregister'
 
 function App() {
   return (
     <>
     {/* <LoginForm /> */}
-    <Register />
+    <Unregister />
     </>
   )
 }

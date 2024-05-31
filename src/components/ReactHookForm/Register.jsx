@@ -15,8 +15,7 @@ export default function Register() {
        type='name'
        className='border-blue-500 border-2 rounded-md'
        {...register('name',{
-        required: 
-        'value is required',
+        required: 'value is required',
         maxLength:
         {
             value: '5',
