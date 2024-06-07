@@ -7,7 +7,7 @@ export default function Posts({setOnSelectorId}) {
     const [errors,setErrors]=useState(null)
     function handleOnSelector(event){
         setOnSelectorId(event.target.value)
-        console.log(event.target.value)
+       
       }
   
 

@@ -4,7 +4,7 @@ export default function Comments({postId}) {
     const [isLoading,setIsLoading]=useState(false);
     const [isError,setIsError]=useState(null);
     const [post,setPost]=useState([])
-    console.log(post)
+    
 
     useEffect(()=>{
         setIsLoading(true);
