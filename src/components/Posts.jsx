@@ -1,50 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import PostSelector from './PostSelector';
-
+import React from 'react';
+import fetchPost from '../utils/fetchPosts';
+const resours=  fetchPost('https://jsonplaceholder.typicode.com/posts?_limit=5')
 export default function Posts({setOnSelectorId}) {
-    const [loading,setLoading]=useState(false)
-    const [posts,setPosts]=useState([]);
-    const [errors,setErrors]=useState(null)
     function handleOnSelector(event){
         setOnSelectorId(event.target.value)
-       
       }
-  
-
-    useEffect(()=>{
-      setLoading(true)
-      const fetchPost=async()=>{
-          try{
-            const response=await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
-            const data=await response.json();
-            if(response.ok){
-              setLoading(false)
-              setPosts(data)
-            }else{
-              setLoading(false)
-              setErrors('there was an error occured')
-            }
-          
-          }catch(error){
-            setLoading(false)
-            setErrors(error.message)
-          }
-      }
-      fetchPost();
-    },[])
-    let postContent;
-    if(loading){
-      postContent=<div>Posts loading...</div>
-    }else if(!loading && errors){
-      postContent=<div className='error'>{errors}</div>
-    }else{
-      postContent=(
-        <PostSelector posts={posts} onSelector={handleOnSelector} />
-      )
-    }
+const posts=resours.read();
+console.log(posts)
   return (
     <div>
-      {postContent}
+     <select className='border-black border-2 w-[200px]' onChange={handleOnSelector}>
+        <option value=''>Select Post</option>
+        {posts && posts.map((post)=>(
+            <option key={post.id} value={post.id}>{post.title}</option>
+        ))}
+
+    </select>
     </div>
   )
 }
