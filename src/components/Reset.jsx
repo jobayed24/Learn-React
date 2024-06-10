@@ -6,7 +6,7 @@ export default function Reset() {
   const handleResetPass=async()=>{
       try{
         const res=await resetPasswordWithEmailLink(email)
-        console.log(res)
+        console.log('successfully password reset email sent')
       }catch(err){
         console.log(err)
       }

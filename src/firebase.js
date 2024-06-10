@@ -1,14 +1,15 @@
 
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+
 const firebaseConfig = {
-    apiKey: "AIzaSyBj-AdxBTRj-kEmwAKc7mBFbXCviSGXnNM",
-    authDomain: "ghorihut-otp.firebaseapp.com",
-    projectId: "ghorihut-otp",
-    storageBucket: "ghorihut-otp.appspot.com",
-    messagingSenderId: "866471602601",
-    appId: "1:866471602601:web:7a055f6ee71bbc2b90bcb8",
-    measurementId: "G-2RGZHM0602"
+    apiKey: import.meta.env.VITE_FIREBASE_API,
+    authDomain: import.meta.env.VITE_FIREABSE_AUTHDOMAIN,
+    projectId: import.meta.env.VITE_FIREABSE_PROJECTID,
+    storageBucket: import.meta.env.VITE_FIREABSE_STORAGEBUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREABSE_MESSAGEINGSENDERID,
+    appId: import.meta.env.VITE_FIREABSE_APPID,
+    measurementId: import.meta.env.VITE_FIREABSE_MEASUREMENTID
   };
 
 const app = initializeApp(firebaseConfig);
